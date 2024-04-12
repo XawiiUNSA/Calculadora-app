@@ -22,16 +22,7 @@
     <div class="button">=</div>
   </div>
 </template>
-
-<script>
-export default {
-  data () {
-    return {
-      valorActual: '123'
-    }
-  }
-}
-</script>
+<script src="./Calculadora.js"></script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
