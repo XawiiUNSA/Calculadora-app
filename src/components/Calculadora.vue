@@ -1,6 +1,6 @@
 <template>
-  
-<!--Hola -->
+<!--Hola-->
+
   <div class="calculadora">
     <div class="display">0</div>
     <div class="button">C</div>
@@ -24,7 +24,11 @@
     <div class="button">=</div>
   </div>
 </template>
-<script src="./Calculadora.js"></script>
+
+<script>
+export default {
+};
+</script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
