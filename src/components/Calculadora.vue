@@ -1,4 +1,6 @@
 <template>
+<!--Hola-->
+
   <div class="calculadora">
     <div class="display">0</div>
     <div class="button">C</div>
