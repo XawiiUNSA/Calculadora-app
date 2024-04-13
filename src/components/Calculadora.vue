@@ -2,7 +2,7 @@
   <div class="calculadora">
       <div class="display">{{valorActual || '0'}}</div>
       <div @click="limpiar" class="button">C</div>
-      <div @click="n" class="button">+/-</div>
+      <div @click="signo" class="button">+/-</div>
       <div @click="n" class="button">%</div>
       <div @click="n" class="button operator">÷</div>
       <div @click="n" class="button">7</div>
@@ -39,7 +39,10 @@ export default {
     },
     n () {
       this.operadorPulsado = true
-    }
+    },
+    signo () {
+      this.valorActual = this.valorActual.charAt(0) === '-' ? this.valorActual.slice(1) : `-${this.valorActual}`
+    },
   }
 }
 </script>
