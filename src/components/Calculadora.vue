@@ -3,7 +3,7 @@
       <div class="display">{{valorActual || '0'}}</div>
       <div @click="limpiar" class="button">C</div>
       <div @click="signo" class="button">+/-</div>
-      <div @click="n" class="button">%</div>
+      <div @click="porcentaje" class="button">%</div>
       <div @click="n" class="button operator">÷</div>
       <div @click="n" class="button">7</div>
       <div @click="n" class="button">8</div>
@@ -42,6 +42,9 @@ export default {
     },
     signo () {
       this.valorActual = this.valorActual.charAt(0) === '-' ? this.valorActual.slice(1) : `-${this.valorActual}`
+    },
+    porcentaje () {
+      this.valorActual = `${parseFloat(this.valorActual) / 100}`
     },
   }
 }
