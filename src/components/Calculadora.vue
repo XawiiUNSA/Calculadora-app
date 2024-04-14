@@ -19,7 +19,7 @@
       <div @click="n" class="button operator">+</div>
       <div @click="juntarNumeros('0')" class="button zero">0</div>
       <div @click="punto" class="button">.</div>
-      <div @click="n" class="button">=</div>
+      <div @click="resultado" class="button">=</div>
     </div>
   </template>
 
@@ -65,6 +65,13 @@ export default {
     establecerValor() {
       this.numeroAnterior = this.valorCorrente;
       this.operadorClicado = true;
+    },
+    resultado () {
+      this.valorActual = `${this.operador(
+        parseFloat(this.numeroAnterior),
+        parseFloat(this.valorActual)
+      )}`
+      this.numeroAnterior = null
     },
   }
 }
