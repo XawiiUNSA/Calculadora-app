@@ -18,7 +18,7 @@
       <div @click="juntarNumeros('3')" class="button">3</div>
       <div @click="n" class="button operator">+</div>
       <div @click="juntarNumeros('0')" class="button zero">0</div>
-      <div @click="n" class="button">.</div>
+      <div @click="punto" class="button">.</div>
       <div @click="n" class="button">=</div>
     </div>
   </template>
@@ -47,16 +47,21 @@ export default {
       this.valorActual = `${parseFloat(this.valorActual) / 100}`
     },
     juntarNumeros(numero) {
-  if (this.operadorPulsado) {
-    this.valorActual = '0';
-    this.operadorPulsado = false;
-  }
-  if (this.valorActual === '0' && numero !== '.') {
-    this.valorActual = numero;
-  } else {
-    this.valorActual += numero;
-  }
-}
+      if (this.operadorPulsado) {
+        this.valorActual = '0';
+        this.operadorPulsado = false;
+      }
+      if (this.valorActual === '0' && numero !== '.') {
+        this.valorActual = numero;
+      } else {
+        this.valorActual += numero;
+      }
+    },
+    punto () {
+      if (this.valorActual.indexOf('.') === -1) {
+        this.juntarNumeros('.')
+      }
+    },
   }
 }
 </script>
