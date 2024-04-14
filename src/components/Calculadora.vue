@@ -62,6 +62,10 @@ export default {
         this.juntarNumeros('.')
       }
     },
+    establecerValor() {
+      this.numeroAnterior = this.valorCorrente;
+      this.operadorClicado = true;
+    },
   }
 }
 </script>
