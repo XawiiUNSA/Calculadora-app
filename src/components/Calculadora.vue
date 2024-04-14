@@ -5,19 +5,19 @@
       <div @click="signo" class="button">+/-</div>
       <div @click="porcentaje" class="button">%</div>
       <div @click="n" class="button operator">÷</div>
-      <div @click="n" class="button">7</div>
-      <div @click="n" class="button">8</div>
-      <div @click="n" class="button">9</div>
+      <div @click="juntarNumeros('7')" class="button">7</div>
+      <div @click="juntarNumeros('8')" class="button">8</div>
+      <div @click="juntarNumeros('9')" class="button">9</div>
       <div @click="n" class="button operator">x</div>
-      <div @click="n" class="button">4</div>
-      <div @click="n" class="button">5</div>
-      <div @click="n" class="button">6</div>
-      <div @click="n" class="button operator">-</div>
-      <div @click="n" class="button">1</div>
-      <div @click="n" class="button">2</div>
-      <div @click="n" class="button">3</div>
+      <div @click="juntarNumeros('4')" class="button">4</div>
+      <div @click="juntarNumeros('5')" class="button">5</div>
+      <div @click="juntarNumeros('6')" class="button">6</div>
+      <div @click="" class="button operator">-</div>
+      <div @click="juntarNumeros('1')" class="button">1</div>
+      <div @click="juntarNumeros('2')" class="button">2</div>
+      <div @click="juntarNumeros('3')" class="button">3</div>
       <div @click="n" class="button operator">+</div>
-      <div @click="n" class="button zero">0</div>
+      <div @click="juntarNumeros('0')" class="button zero">0</div>
       <div @click="n" class="button">.</div>
       <div @click="n" class="button">=</div>
     </div>
@@ -46,6 +46,17 @@ export default {
     porcentaje () {
       this.valorActual = `${parseFloat(this.valorActual) / 100}`
     },
+    juntarNumeros(numero) {
+  if (this.operadorPulsado) {
+    this.valorActual = '0';
+    this.operadorPulsado = false;
+  }
+  if (this.valorActual === '0' && numero !== '.') {
+    this.valorActual = numero;
+  } else {
+    this.valorActual += numero;
+  }
+}
   }
 }
 </script>
