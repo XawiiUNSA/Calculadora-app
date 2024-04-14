@@ -46,16 +46,13 @@ export default {
     porcentaje () {
       this.valorActual = `${parseFloat(this.valorActual) / 100}`
     },
-    juntarNumeros(numero) {
+    juntarNumeros (numero) {
       if (this.operadorPulsado) {
-        this.valorActual = '0';
-        this.operadorPulsado = false;
+        this.valorActual = ''
+        this.operadorPulsado = false
       }
-      if (this.valorActual === '0' && numero !== '.') {
-        this.valorActual = numero;
-      } else {
-        this.valorActual += numero;
-      }
+
+      this.valorActual = `${this.valorActual}${numero}`
     },
     punto () {
       if (this.valorActual.indexOf('.') === -1) {
